@@ -33,8 +33,8 @@ public abstract class AInstrumentByFiatTestStrategy extends AInstrumentByFiatStr
 //            .put("BBG0013HJJ31", 1)  // EUR
 //            .put("BBG0013HGFT4", 1)  // USD
 //            .put("BBG0013HRTL0", 1)   // CNY
-            .put("BBG00Y91R9T3", 1)   // OZON
-            .put("RU000A106T36", 1)   // Astra
+//            .put("BBG00Y91R9T3", 1)   // OZON
+//            .put("RU000A106T36", 1)   // Astra
             .put("TCS00A105EX7", 1)   // Whoosh
             .build();
 
@@ -44,6 +44,6 @@ public abstract class AInstrumentByFiatTestStrategy extends AInstrumentByFiatStr
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 }

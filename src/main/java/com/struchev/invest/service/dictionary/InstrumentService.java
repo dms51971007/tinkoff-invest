@@ -46,7 +46,7 @@ public class InstrumentService {
         // load all instruments to memory
         instrumentByFigi = new ConcurrentHashMap<>();
 
-        var shares = tinkoffCommonAPI.getApi().getInstrumentsService().getAllSharesSync();
+        var shares = tinkoffCommonAPI.getApi().getInstrumentsService().getTradableSharesSync();
         shares.forEach(i -> instrumentByFigi.put(i.getFigi(), new Instrument(i.getFigi(), i.getCurrency(), i.getName(), i.getLot())));
 
         var futures = tinkoffCommonAPI.getApi().getInstrumentsService().getAllFuturesSync();

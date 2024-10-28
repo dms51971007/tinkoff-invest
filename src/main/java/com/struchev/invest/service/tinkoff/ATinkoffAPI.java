@@ -7,6 +7,8 @@ import ru.tinkoff.piapi.core.InvestApi;
 
 import jakarta.annotation.PostConstruct;
 
+import java.util.concurrent.CompletableFuture;
+
 @Slf4j
 public abstract class ATinkoffAPI implements ITinkoffCommonAPI, ITinkoffOrderAPI {
 
@@ -38,8 +40,8 @@ public abstract class ATinkoffAPI implements ITinkoffCommonAPI, ITinkoffOrderAPI
 
     @PostConstruct
     private void init() {
-        api = isSandboxMode ? InvestApi.createSandbox(token, "roman-struchev") : InvestApi.create(token, "roman-struchev");
-
+        api = isSandboxMode ? InvestApi.createSandbox(token, "dimon") : InvestApi.create(token, "dimon");
+        //String eee = api.getSandboxService().openAccountSync();
         // Проверяем, что аккаунт существует (если задан в конфигах) или выбираем первый
         var accounts = isSandboxMode
                 ? api.getSandboxService().getAccountsSync() : api.getUserService().getAccountsSync();
